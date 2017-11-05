@@ -1,0 +1,22 @@
+{
+  "name": "node-hangman",
+  "version": "1.0.0",
+  "description": "Version of the classic hangman game running on the command line through node and npm package Inquirer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m081779/Node-Hangman.git"
+  },
+  "author": "Marco Principio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m081779/Node-Hangman/issues"
+  },
+  "homepage": "https://github.com/m081779/Node-Hangman#readme",
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  }
+}
