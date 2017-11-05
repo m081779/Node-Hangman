@@ -1,15 +1,20 @@
 const inquirer = require('inquirer');
 const Word = require('./word.js');
 const Letter = require('./letter.js');
-let wordArr = ['hello', 'dog', 'cheese']
+const fs = require('fs');
+let wordArr = ['the cheese is old and moldy']
 let word = ''
 let lettersGuessed = [];
 
 function generateWord() {
-	let random = ~~( Math.random() * wordArr.length );
-	word = new Word( random, wordArr, lettersGuessed );
-	console.log( word.word );
-	word.blankify();
+	fs.readFile('wordList.txt', 'utf8', function (err, data) {
+		if (err) throw err;
+		wordArr = data.split('\r\n');
+		let random = ~~( Math.random() * wordArr.length );
+		word = new Word( random, wordArr, lettersGuessed );
+		word.blankify();
+		guessLetter();
+	})
 }
 
 function guessLetter() {
@@ -19,12 +24,10 @@ function guessLetter() {
 			name: 'guess',
 			message: 'Guess a letter...'
 		}
-	]).then(function (response) {
-		let guess = response.guess.toLowerCase();
-		var letter = new Letter(guess, lettersGuessed, word)
+	]).then(function (res) {
+		let guess = res.guess.toLowerCase();
+		var letter = new Letter(guess, lettersGuessed,word)
 		letter.validate();
-		
-		
 		word.blankify();
 		if ( word.guesses > 0 && !word.complete ) {
 			guessLetter();
@@ -50,4 +53,3 @@ function guessLetter() {
 	});
 }
 generateWord();
-guessLetter();

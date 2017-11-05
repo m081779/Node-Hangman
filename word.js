@@ -30,10 +30,9 @@ Word.prototype.blankify = function () {
 }
 
 Word.prototype.checkString = function () {
-	let string = this.blankArr.join( '' );
-	if ( string === this.word ) {
+	if (!this.blankArr.includes('_')) {
 		this.complete = true;
-		console.log('You guessed all the letters correctly!!!!  You win!')
+		console.log('You guessed all the letters correctly!!!!  You win!');
 	}
 }
 
