@@ -25,8 +25,10 @@ Word.prototype.blankify = function () {
 			this.blankArr.push( '  ' )
 		} 
 	}
+	console.log('=========================')
 	console.log( this.blankArr.join( ' ' ) );
-		this.checkString();		
+	console.log('=========================')
+	this.checkString();		
 }
 
 Word.prototype.checkString = function () {
