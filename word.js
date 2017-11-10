@@ -25,22 +25,25 @@ Word.prototype.blankify = function () {
 			this.blankArr.push( '  ' )
 		} 
 	}
-	console.log('=========================')
-	console.log( this.blankArr.join( ' ' ) );
-	console.log('=========================')
+	console.log('========================='.cyan);
+	console.log( '   '+this.blankArr.join( ' ' ) );
+	console.log('========================='.cyan);
 	this.checkString();		
 }
 
 Word.prototype.checkString = function () {
 	if (!this.blankArr.includes('_')) {
 		this.complete = true;
-		console.log('You guessed all the letters correctly!!!!  You win!');
+		console.log('  You guessed all the letters correctly!!!!');
+		console.log('             '.bgBlack +' ***You WIN!*** '.america.bold.bgWhite);
 	}
 }
 
 Word.prototype.show = function () {
 	if ( this.guesses <= 0 ) {
-		console.log(`${this.word} was the word you were trying to guess.`);
+		console.log('   ');
+		console.log(`  The word you were trying to guess was ${this.word.bold.white.bgRed}.`);
+		console.log('   ');
 	}
 }
 

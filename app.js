@@ -1,18 +1,20 @@
 const inquirer = require('inquirer');
+const colors = require('colors');
 const Word = require('./word.js');
 const Letter = require('./letter.js');
+
 const fs = require('fs');
-let wordArr = ['the cheese is old and moldy']
-let word = ''
+let wordArr = []
 let lettersGuessed = [];
+let word = ''
 
 function drawMan() {
 	let one= '     ========',
-	two= '        |   |',
-	three= '            |',
-	four= '            |',
-	five= '            |',
-	six= '     ========';
+	two=     '        |   |',
+	three=   '            |',
+	four=    '            |',
+	five=    '            |',
+	six=     '     ========';
 // ========
 //    |	  | 
 //   ()   |

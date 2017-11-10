@@ -15,18 +15,20 @@ Letter.prototype.validate = function () {
 	} else if ( this.guessArr.indexOf( guess ) >= 0 ) {
 		console.log('That letter has already been guessed.  Try again...');
 	} else if ( this.word.letterArr.indexOf( guess ) >= 0 ) {
-		console.log('That was a **CORRECT** guess.  Guess another letter...');
+		console.log('That was a '+'  **CORRECT**  '.bold.white.bgGreen+' guess.  Guess another letter...');
 		this.guessArr.push( guess );
 	} else if ( this.word.letterArr.indexOf( guess ) < 0 && this.guessArr.indexOf(guess) < 0 ){
 		this.guessArr.push( guess );
 		this.word.guesses--;
 		if ( this.word.guesses === 1 ) {
-			console.log(`That was an INCORRECT guess. You only have ${this.word.guesses} guess left.  Guess another letter, and make it a good one...`);
+			console.log('That was an ' + ' INCORRECT '.bold.bgRed + ' guess. You only have '+this.word.guesses+' guess left.  Guess another letter, and make it a good one...');
 		} else if ( this.word.guesses === 0 ){
+			
+			console.log('      '.bgBlack+'  Game over.  '.bold.red.bgWhite);
+			console.log(' '.bgBlack+' Better luck next time! '.inverse);	
 			this.word.show();
-			console.log('Game over. Better luck next time');
 		} else {
-			console.log(`That was an INCORRECT guess. You have ${this.word.guesses} guesses left.  Guess another letter...`);
+			console.log('That was an ' + ' INCORRECT '.bold.bgRed  + ' guess. You have '+this.word.guesses+' guesses left.  Guess another letter...');
 		}
 	}
 }
