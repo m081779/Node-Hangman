@@ -38,4 +38,4 @@ Letter.prototype.validate = function () {
 }
 
 
-module.exports= Letter;
+module.exports = Letter;
