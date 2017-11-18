@@ -12,7 +12,7 @@
 
 
 
-## This is a version of the classic hangman game that is run on the command line.  The user inputs letter characters via an NPM package called inquirer.  All guesses are tracked to keep the user from guessing the same letter more than once.
+## This is a version of the classic hangman game that is run on the command line.  The user inputs letter characters via an NPM package called 'inquirer'.  All guesses are tracked to keep the user from guessing the same letter more than once.
 ![image of command line prompt](https://github.com/m081779/Node-Hangman/blob/master/images/img1.png)
 
 
@@ -33,7 +33,7 @@
 
 
 
-## When a letter is guessed correctly, a message displays.  All of the coloring was done with the NPM package colors:
+## When a letter is guessed correctly, a message displays.  All of the coloring was done with the NPM package 'colors':
 ![image of command line prompt](https://github.com/m081779/Node-Hangman/blob/master/images/img4.png)
 
 
