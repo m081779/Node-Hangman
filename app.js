@@ -3,6 +3,7 @@
 const inquirer = require('inquirer');
 const colors = require('colors');
 const fs = require('fs');
+const os = require('os');
 
 // importing external constructor files
 const Word = require('./word.js');
@@ -70,7 +71,7 @@ function drawMan() {
 function generateWord() {
 	fs.readFile('wordList.txt', 'utf8', ( err, data ) => {
 		if ( err ) throw err;
-		wordArr = data.split( '\r\n' );
+		wordArr = data.split( os.EOL );
 		let random = ~~( Math.random() * wordArr.length );
 		word = new Word( random, wordArr, lettersGuessed );
 		word.blankify();
